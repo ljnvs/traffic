@@ -1,0 +1,50 @@
+{
+  "dataset_id": "xuancheng_clean_v2",
+  "split_id": "chronological_v1",
+  "frozen_on": "2026-09-19",
+  "policy": "calendar-day chronological split; never shuffle individual trips across splits",
+  "excluded_dates": {
+    "2023-04-09": "byte-identical duplicate of 2023-04-08"
+  },
+  "splits": {
+    "train": {
+      "dates": [
+        "2023-04-01", "2023-04-02", "2023-04-03", "2023-04-04",
+        "2023-04-05", "2023-04-06", "2023-04-07", "2023-04-08",
+        "2023-04-10", "2023-04-11", "2023-04-12", "2023-04-13",
+        "2023-04-14"
+      ],
+      "days": 13,
+      "records": 4133388
+    },
+    "validation": {
+      "dates": ["2023-04-15", "2023-04-16", "2023-04-17", "2023-04-18"],
+      "days": 4,
+      "records": 1209154
+    },
+    "calibration": {
+      "dates": [
+        "2023-04-19", "2023-04-20", "2023-04-21", "2023-04-22",
+        "2023-04-23"
+      ],
+      "days": 5,
+      "records": 1562381
+    },
+    "test": {
+      "dates": [
+        "2023-04-24", "2023-04-25", "2023-04-26", "2023-04-27",
+        "2023-04-28", "2023-04-29", "2023-04-30"
+      ],
+      "days": 7,
+      "records": 2394651
+    }
+  },
+  "total_days": 29,
+  "total_records": 9299574,
+  "leakage_guards": [
+    "fit standardization, source selection, thresholds, models and risk weights without test dates",
+    "use future flow files only as simulator ground truth, never as predictor or controller input",
+    "online calibration during test may use only labels already fully observed at that time"
+  ]
+}
+

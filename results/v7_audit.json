@@ -1,0 +1,17 @@
+{
+  "scope": "validation and synthetic states only",
+  "controlled_intersections": 9,
+  "intersections_with_multiple_effective_actions": 2,
+  "effective_joint_actions": 64,
+  "synthetic_positive_control": {
+    "no_future_phase": 0,
+    "event_oracle_phase": 1,
+    "cost_of_no_future_action_under_same_future": 3195.833333333333,
+    "cost_of_oracle_action_under_same_future": 1230.0,
+    "relative_cost_reduction": 0.6151238591916558
+  },
+  "projection_consistency": {
+    "single_movement_max_road_queue_error": 0.0,
+    "competing_movements_fifo_vs_proportional_l1": 2.5
+  }
+}
